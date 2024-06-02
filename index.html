@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Proyectos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Proyectos</h1>
+        <div class="form-group">
+            <label for="projectName">Nombre del Proyecto:</label>
+            <input type="text" id="projectName" placeholder="Ingrese el nombre del proyecto">
+            <button onclick="addProject()">Añadir Proyecto</button>
+        </div>
+
+        <div class="form-group">
+            <label for="projectList">Seleccione un Proyecto:</label>
+            <select id="projectList">
+                <option value="" disabled selected>Seleccione un proyecto</option>
+            </select>
+            <button id="removeProjectButton" onclick="removeSelectedProject()">Eliminar Proyecto</button>
+        </div>
+
+        <div class="form-group">
+            <label for="projectNumber">Horas en el Proyecto:</label>
+            <input type="text" id="projectNumber" placeholder="Horas en el Proyecto">
+            <button onclick="assignNumber()">Asignar Horas</button>
+        </div>
+
+        <div class="form-group">
+            <h2>Horas Totales:</h2>
+            <div class="scroll-panel">
+                <ul id="assignedProjects"></ul>
+            </div>
+        </div>
+
+        <a id="exportLink" href="#" onclick="exportProjects()">Exportar a Hoja de Cálculo</a>
+        
+        <button id="clearStorageButton" onclick="clearLocalStorage()">Limpiar Proyectos Guardados</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
